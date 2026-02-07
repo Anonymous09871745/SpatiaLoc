@@ -4,21 +4,16 @@
 
   <h3 align="center">SpatiaLoc: Leveraging Multi-Level Spatial Enhanced Descriptors for Cross-Modal Localization</h3>
 
-
 <p align="center">
   <a href="https://arxiv.org/abs/2601.03579" target='_blank'>
     <img src="https://img.shields.io/badge/Paper-%F0%9F%93%83-yellow">
   </a>
 
-
 <br>
 <p align="center">
-  <img src="https://github.com/dqliua/MNCL/blob/main/imgs/model.png" align="center" width="90%">
+  <img src="https://github.com/user-attachments/assets/141d114c-704e-43e7-bb68-a7893b4bc36c" align="center" width="90%">
   <br>
-In the cross-modal place recognition stage, we introduce a multi-level
-negative contrastive learning framework to minimize the similarity of different locations at global-level, instance-level, and
-relation-level, respectively. This fully leverages the descriptive power of language for spatial localization. In the fine localization
-stage, we use the language query and the retrieved cell to regress the corresponding position.
+    Cross-modal localization using text and point clouds enables robots to localize themselves via natural language descriptions, with applications in autonomous navigation and interaction between humans and robots. In this task, objects often recur across text and point clouds, making spatial relationships the most discriminative cues for localization. Based on this observation, we present SpatiaLoc, a framework utilizing a coarse-to-fine strategy that emphasizes spatial relationships at both the instance and global levels. In the coarse stage, we introduce a Bézier Enhanced Object Spatial Encoder (BEOSE) that models spatial relationships at the instance level using quadratic Bézier curves. Additionally, a Frequency Aware Encoder (FAE) generates global spatial representations in the frequency domain. In the fine stage, an Uncertainty Aware Gaussian Fine Localizer (UGFL) regresses 2D positions by modeling predictions as Gaussian distributions with an uncertainty-aware loss function. Extensive experiments on KITTI360Pose demonstrate that SpatiaLoc significantly outperforms existing state-of-the-art (SOTA) methods.
 </p>
 <br>
 
@@ -30,17 +25,16 @@ stage, we use the language query and the retrieved cell to regress the correspon
 - [Train](#train)
 - [Eval](#eval)
 - [Test](#test)
-- [Citation](#citation)
 
 ## Installation
 
 Create the environment using the following command.
 
 ```
-git clone https://github.com/dqliua/MNCL.git
+git clone https://github.com/Anonymous09871745/SpatiaLoc
 
-conda create -n mncl python=3.10
-conda activate mncl
+conda create -n Spatialoc python=3.10
+conda activate Spatialoc
 
 # Install the according versions of torch and torchvision
 conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
@@ -83,7 +77,7 @@ The table below lists the pretrained weights in our method. These include the de
 After completing the above steps, the basic directory structure should be like:
 
 ```
-MNCL
+SpatiaLoc
  ├── checkpoints
       ├── coarse.pth
       ├── fine.pth
@@ -219,21 +213,4 @@ python -m evaluation.pipeline --base_path ./data/k360_30-10_scG_pd10_pc4_spY_all
     --fixed_embedding \
     --path_coarse ./checkpoints/{PATH_TO_COARSE}/{COARSE_MODEL_NAME} \
     --path_fine ./checkpoints/{PATH_TO_FINE}/{FINE_MODEL_NAME} 
-```
-
-
-## Citation
-
-If you find this work helpful, please kindly consider citing our paper:
-
-```bibtex
-@inproceedings{liu2025text,
-  title={Text to point cloud localization with multi-level negative contrastive learning},
-  author={Liu, Dunqiang and Huang, Shujun and Li, Wen and Shen, Siqi and Wang, Cheng},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={39},
-  number={5},
-  pages={5397--5405},
-  year={2025}
-}
 ```

@@ -4,11 +4,6 @@
 
   <h3 align="center">SpatiaLoc: Leveraging Multi-Level Spatial Enhanced Descriptors for Cross-Modal Localization</h3>
 
-<p align="center">
-  <a href="https://arxiv.org/abs/2601.03579" target='_blank'>
-    <img src="https://img.shields.io/badge/Paper-%F0%9F%93%83-yellow">
-  </a>
-
 <br>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/141d114c-704e-43e7-bb68-a7893b4bc36c" align="center" width="90%">
